@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const controllers = require('./controllers');
 
-router.get('/highscores', controllers.getHighScores);
+router.get('/highscores', controllers.loadScores);
 
-router.post();
+// router.post();
 
 module.exports = router;
