@@ -1,13 +1,13 @@
-const db = require('./db.js');
+const { pool } = require('./db.js');
 
 module.exports = {
-  getHighScores: (callback) => {
-    db.query('SELECT * FROM leaderboards ORDER BY score DESC', (err, results) => {
-      console.log('getting', err, results);
-      if (err) {
-        callback(err, null);
-      }
-      callback(null, results);
-    })
+  getHighScores: async (callback) => {
+    const client = await pool.connect();
+    try {
+      const highScoresResult = await client.query('SELECT * FROM leaderboards ORDER BY score DESC');
+      callback(null, highScoresResult.rows);
+    } catch (error) {
+      callback(error, null);
+    }
   }
 }

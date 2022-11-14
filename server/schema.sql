@@ -1,11 +1,10 @@
 CREATE DATABASE IF NOT EXISTS mvphighscores;
-USE mvphighscores;
+\c mvphighscores;
 
 CREATE TABLE IF NOT EXISTS leaderboards (
-  userid INT NOT NULL AUTO_INCREMENT,
+  userid SERIAL PRIMARY KEY,
   username VARCHAR(40) NOT NULL UNIQUE,
-  score BIGINT NOT NULL,
-  rowsscore INT NOT NULL,
-  levelscore INT NOT NULL,
-  PRIMARY KEY (userid)
+  score BIGINT,
+  rowsscore INT,
+  levelscore INT
 );
