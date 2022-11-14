@@ -1,9 +1,10 @@
 import React from 'react';
+import Tetris from './Tetris.jsx';
 
 const App = () => {
   return (
-    <div>
-      <h1>My MVP</h1>
+    <div className="App">
+      <Tetris />
     </div>
   );
 }
