@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios';
 
 import { StyledForm, StyledInput, StyledLabel, StyledHSDiv, StyledH2 } from './styles/StyledAddScores.jsx';
 
-const AddScores = ({ score, rows, level }) => {
+const AddScores = ({ score, rows, level, leaderboards, setLeaderboards }) => {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const usernameRef = useRef();
@@ -15,7 +16,19 @@ const AddScores = ({ score, rows, level }) => {
       rowsscore: rows,
       levelscore: level,
     };
-    console.log(leaderObj);
+    axios.post('/highscores', leaderObj)
+      .then(results => {
+        axios.get('/highscores')
+          .then(results => {
+            setLeaderboards(results.data);
+            setFormSubmitted(!formSubmitted);
+            usernameRef.current.value = null;
+          })
+          .catch(err => console.log('GET after POST Error', err));
+
+      })
+      .catch(err => console.log('Error posting scores', err));
+    // console.log(leaderObj);
   };
 
   return (

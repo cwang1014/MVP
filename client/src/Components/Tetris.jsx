@@ -53,8 +53,8 @@ const Tetris = () => {
   };
 
   const drop = () => {
-    // Increase level when player has cleared 10 rows
-    if (rows > (level + 1) * 1) {
+    // Increase level when player has cleared 2 rows
+    if (rows > (level + 1) * 2) {
       setLevel(prev => prev + 1);
       // also increase speed
       setDropTime(1000 / (level + 1) + 200);
@@ -112,7 +112,7 @@ const Tetris = () => {
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
       <StyledTetris>
         {gameOver ? (
-          <AddScores score={score} rows={rows} level={level} />
+          <AddScores score={score} rows={rows} level={level} leaderboards={leaderboards} setLeaderboards={setLeaderboards} />
         ) : (
           <Stage stage={stage} />
         )}
