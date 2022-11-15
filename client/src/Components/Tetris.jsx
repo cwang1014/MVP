@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { createStage, checkCollision } from '../gameHelpers.js';
 
 // styled components
@@ -14,18 +15,25 @@ import { useGameStatus } from '../hooks/useGameStatus.js';
 import Stage from './Stage.jsx';
 import Display from './Display.jsx';
 import StartButton from './StartButton.jsx';
-import Highscores from './AddScores.jsx';
+import AddScores from './AddScores.jsx';
+import Leaderboards from './Leaderboards.jsx';
 
 const Tetris = () => {
 
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [leaderboards, setLeaderboards] = useState([]);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
-  // console.log('re-render');
+  // console.log('player', player);
+  useEffect(() => {
+    axios.get('/highscores')
+      .then(results => setLeaderboards(results.data))
+      .catch(err => console.log('Error getting high scores', err));
+  }, []);
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -104,7 +112,7 @@ const Tetris = () => {
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
       <StyledTetris>
         {gameOver ? (
-          <Highscores score={score} rows={rows} level={level} />
+          <AddScores score={score} rows={rows} level={level} />
         ) : (
           <Stage stage={stage} />
         )}
@@ -119,6 +127,9 @@ const Tetris = () => {
             </div>
           )}
           <StartButton callback={startGame} />
+          <div>
+            <Leaderboards leaderboards={leaderboards} />
+          </div>
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>

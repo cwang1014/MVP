@@ -4,6 +4,6 @@ const controllers = require('./controllers');
 
 router.get('/highscores', controllers.loadScores);
 
-// router.post();
+router.post('/highscores', controllers.postScore);
 
 module.exports = router;

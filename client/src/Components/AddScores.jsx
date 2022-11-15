@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { StyledForm, StyledInput, StyledLabel, StyledHSDiv, StyledH2 } from './styles/StyledAddScores.jsx';
 
-const Highscores = ({ score, rows, level }) => {
+const AddScores = ({ score, rows, level }) => {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const usernameRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let leaderObj = {
+      username: usernameRef.current.value,
+      score: score,
+      rowsscore: rows,
+      levelscore: level,
+    };
+    console.log(leaderObj);
+  };
 
   return (
     <div>
@@ -13,7 +25,7 @@ const Highscores = ({ score, rows, level }) => {
           <StyledH2>Scores Submitted</StyledH2>
         </StyledForm>
       ) : (
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit}>
           <StyledH2>GAME OVER</StyledH2>
           <StyledHSDiv>
             <StyledLabel>Your score: {score}</StyledLabel>
@@ -28,7 +40,7 @@ const Highscores = ({ score, rows, level }) => {
             <StyledLabel>Input username below to save your scores or click start game to start a new game!</StyledLabel>
           </StyledHSDiv>
           <StyledHSDiv>
-            <StyledInput placeholder="Username" /><StyledInput type="submit" value="Submit Scores" />
+            <StyledInput placeholder="Username" ref={usernameRef} required /><StyledInput type="submit" value="Submit Scores" />
           </StyledHSDiv>
         </StyledForm>
       )}
@@ -36,4 +48,4 @@ const Highscores = ({ score, rows, level }) => {
   );
 };
 
-export default Highscores;
+export default AddScores;
