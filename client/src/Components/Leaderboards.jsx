@@ -1,28 +1,28 @@
 import React from 'react';
-import { StyledLeaderboards, StyledTHeader, StyledTBody, StyledTCell } from './styles/StyledLeaderboards.jsx';
+import { StyledLeaderboards, StyledTHeader, StyledTBody, StyledTCell, StyledTRow } from './styles/StyledLeaderboards.jsx';
 
 const Leaderboards = ({ leaderboards }) => {
   return (
     <StyledLeaderboards>
       <StyledTHeader>
-        <tr>
-          <th colSpan="4">Top 5</th>
-        </tr>
+        <StyledTRow>
+          <th colSpan="4">Top 10</th>
+        </StyledTRow>
       </StyledTHeader>
       <StyledTBody>
-        <tr>
-          <StyledTCell>User</StyledTCell>
+        <StyledTRow>
+          <StyledTCell>Username</StyledTCell>
           <StyledTCell>Score</StyledTCell>
           <StyledTCell>Rows</StyledTCell>
           <StyledTCell>Lvl</StyledTCell>
-        </tr>
+        </StyledTRow>
         {leaderboards.map((leader, i) => (
-          <tr key={i}>
+          <StyledTRow key={i}>
             <StyledTCell>{leader.username}</StyledTCell>
             <StyledTCell>{leader.score}</StyledTCell>
             <StyledTCell>{leader.rowsscore}</StyledTCell>
             <StyledTCell>{leader.levelscore}</StyledTCell>
-          </tr>
+          </StyledTRow>
         ))}
       </StyledTBody>
     </StyledLeaderboards>

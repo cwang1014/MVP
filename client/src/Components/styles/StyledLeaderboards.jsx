@@ -16,13 +16,18 @@ export const StyledLeaderboards = styled.table`
 `;
 
 export const StyledTHeader = styled.thead`
-
+  padding: 5px;
 `;
 
 export const StyledTBody = styled.tbody`
   padding: 5px;
+  text-align: center;
 `;
 
 export const StyledTCell = styled.td`
-  font-size: .75rem;
+  font-size: .8rem;
+`;
+
+export const StyledTRow = styled.tr`
+
 `;
