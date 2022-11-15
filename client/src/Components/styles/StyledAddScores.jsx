@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledForm = styled.form`
-  background: white;
-  padding: 5px;
   width: 100%;
   max-width: 25vw;
+  background: #111;
+  padding: 20px;
+  height: 250px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px;
 `;
 
 export const StyledH2 = styled.h2`
