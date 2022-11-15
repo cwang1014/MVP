@@ -14,6 +14,7 @@ import { useGameStatus } from '../hooks/useGameStatus.js';
 import Stage from './Stage.jsx';
 import Display from './Display.jsx';
 import StartButton from './StartButton.jsx';
+import Highscores from './AddScores.jsx';
 
 const Tetris = () => {
 
@@ -24,7 +25,7 @@ const Tetris = () => {
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
-  console.log('re-render');
+  // console.log('re-render');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -87,8 +88,6 @@ const Tetris = () => {
         dropPlayer();
       } else if (keyCode === 38) {
         playerRotate(stage, 1);
-      } else {
-        return;
       }
     }
   };
@@ -104,7 +103,11 @@ const Tetris = () => {
   return (
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
       <StyledTetris>
-        <Stage stage={stage} />
+        {gameOver ? (
+          <Highscores score={score} rows={rows} level={level} />
+        ) : (
+          <Stage stage={stage} />
+        )}
         <aside>
           {gameOver ? (
             <Display gameOver={gameOver} text="Game Over" />
