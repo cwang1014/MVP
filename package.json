@@ -12,6 +12,7 @@
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
+    "nth-check": "^2.1.1",
     "pg": "^8.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,7 +22,8 @@
   },
   "scripts": {
     "client-dev": "webpack --mode development --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "deploy": "webpack --mode production && nodemon server/index.js"
   },
   "eslintConfig": {
     "extends": [
