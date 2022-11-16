@@ -108,11 +108,19 @@ const Tetris = () => {
     console.log(score, rows, level);
   }
 
+  // console.log(createStage());
+
   return (
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
       <StyledTetris>
         {gameOver ? (
-          <AddScores score={score} rows={rows} level={level} leaderboards={leaderboards} setLeaderboards={setLeaderboards} />
+          <AddScores
+            score={score}
+            rows={rows}
+            level={level}
+            leaderboards={leaderboards}
+            setLeaderboards={setLeaderboards}
+          />
         ) : (
           <Stage stage={stage} />
         )}

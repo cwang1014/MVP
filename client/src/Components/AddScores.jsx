@@ -5,8 +5,8 @@ import { StyledForm, StyledInput, StyledLabel, StyledHSDiv, StyledH2 } from './s
 
 const AddScores = ({ score, rows, level, leaderboards, setLeaderboards }) => {
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const usernameRef = useRef();
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();

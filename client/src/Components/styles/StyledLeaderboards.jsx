@@ -13,6 +13,7 @@ export const StyledLeaderboards = styled.table`
   background: #000;
   font-family: Pixel, Arial, Helvetica, sans-serif;
   color: white;
+  border-spacing: 3px;
 `;
 
 export const StyledTHeader = styled.thead`
