@@ -50,9 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This tetris clone was extremely fun to work on and was one of my final projects during the Hack Reactor bootcamp.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,7 +116,7 @@ Project Link: [https://github.com/cwang1014/MVP](https://github.com/cwang1014/MV
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [PostgreSQL.js]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 [PostgreSQL-url]: https://www.postgresql.org/
-[Express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[Express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=FFFFFF
 [Express-url]: https://expressjs.com/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
