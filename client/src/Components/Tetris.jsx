@@ -17,6 +17,7 @@ import Display from './Display.jsx';
 import StartButton from './StartButton.jsx';
 import AddScores from './AddScores.jsx';
 import Leaderboards from './Leaderboards.jsx';
+import Controls from './Controls.jsx';
 
 const Tetris = () => {
 
@@ -141,6 +142,9 @@ const Tetris = () => {
           <StartButton callback={startGame} />
           <div>
             <Leaderboards leaderboards={leaderboards} />
+          </div>
+          <div>
+            <Controls />
           </div>
         </aside>
       </StyledTetris>
