@@ -2,6 +2,7 @@ const { getHighScores, postHighScore } = require('../models');
 
 module.exports = {
   loadScores: (req, res) => {
+    // console.log('getting');
     getHighScores((err, results) => {
       if (err) {
         res.status(404).end();
