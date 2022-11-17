@@ -4,13 +4,16 @@ import { StyledControls } from './styles/StyledControls.jsx';
 const Controls = () => {
   return (
     <StyledControls>
-      CONTROLS:
+      GAME CONTROLS:
       <br />
       <br />
       Use arrow keys to move tetrominos left, right, and down
       <br />
       <br />
-      Pressing space will reset the page so avoid that on winning runs
+      Up key rotates current piece
+      <br />
+      <br />
+      Pressing space will reset the page
     </StyledControls>
   );
 };
