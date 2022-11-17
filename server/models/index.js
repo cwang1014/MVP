@@ -1,4 +1,5 @@
 const { pool } = require('./db.js');
+// const Leaderboard = require('./mongoDB.js');
 
 module.exports = {
   getHighScores: async (callback) => {
