@@ -35,7 +35,9 @@ const AddScores = ({ score, rows, level, leaderboards, setLeaderboards }) => {
     <div>
       {formSubmitted ? (
         <StyledForm>
-          <StyledH2>Scores Submitted</StyledH2>
+          <StyledHSDiv>
+            <StyledH2>Scores Submitted</StyledH2>
+          </StyledHSDiv>
         </StyledForm>
       ) : (
         <StyledForm onSubmit={handleSubmit}>
@@ -53,7 +55,7 @@ const AddScores = ({ score, rows, level, leaderboards, setLeaderboards }) => {
             <StyledLabel>Input username below to save your scores or click start game to start a new game!</StyledLabel>
           </StyledHSDiv>
           <StyledHSDiv>
-            <StyledInput placeholder="Username" ref={usernameRef} required /><StyledInput type="submit" value="Submit Scores" />
+            <StyledInput placeholder="Username" ref={usernameRef} required /><StyledInput type="submit" value="Submit Scores" id="input-submit" />
           </StyledHSDiv>
         </StyledForm>
       )}

@@ -11,7 +11,7 @@
     <img src="client/src/Assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Not Tetris</h3>
+<h3 align="center">!Tetris</h3>
 
   <p align="center">
     This project was completed as a part of the Hack Reactor bootcamp where students were tasked with creating a working full stack application.
@@ -51,11 +51,21 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![!Tetris Screen Shot1](/client/src/Assets/TetrisSS1.jpg)
+
+---
+
 This tetris clone was extremely fun to work on and was a way for me to challenge myself as I approach the last couple weeks of my time with Hack Reactor.
 
-The project started out as a dream after watching my seniors (2207) present their MVP ideas. The projects that really stood out to me were the 2 students who made "games", one in the vein of space invaders and the other was a flying simulator that used machine learning and ai to generate random obstacles a player would have to fly around. I didn't think I would be able to do a game as complicated as that but I did start looking into other game alternatives and came across the idea of making tetris (also our seniors loved tetrio).
+The project started out as a dream after watching my seniors (2207) present their MVP ideas. The projects that really stood out to me were the 2 students who made "games", one in the vein of space invaders and the other was a flying simulator that used machine learning and ai to generate random obstacles a player would have to fly around. I didn't think I would be able to do a game as complicated as that but I did start looking into other game alternatives and had the idea of making a tetris clone (also our seniors were tetrio beasts).
 
-After finding some tutorials I was able to use all that I've learned in the bootcamp to create this fullstack game clone Not Tetris. I really hope you enjoy!
+After finding some tutorials I was able to build upon all that I've learned throughout my time in the bootcamp to create this fullstack game clone !Tetris. I really hope you enjoy!
+
+---
+
+![!Tetris Screen Shot2](/client/src/Assets/TetrisSS2.jpg)
+
+![!Tetris Screen Shot3](/client/src/Assets/TetrisSS3.jpg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

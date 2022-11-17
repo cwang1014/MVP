@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+#input-submit {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'Pixel';
   src: url('Assets/Pixel-LCD-7.woff') format('woff');

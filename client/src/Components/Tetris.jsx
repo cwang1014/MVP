@@ -86,6 +86,16 @@ const Tetris = () => {
     drop();
   };
 
+  // const hardDrop = () => {
+  //   let pot = 0;
+  //   while (!checkCollision(player, stage, { x: 0, y: pot })) {
+  //     setDropTime(5);
+  //     pot += 1;
+  //   }
+
+  //   updatePlayerPos({ x: 0, y: pot - 1, collided: true });
+  // }
+
   const move = ({ keyCode }) => {
     if (!gameOver) {
       if (keyCode === 37) {
@@ -103,12 +113,6 @@ const Tetris = () => {
   useInterval(() => {
     drop();
   }, dropTime)
-
-  if (gameOver) {
-    console.log(score, rows, level);
-  }
-
-  // console.log(createStage());
 
   return (
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
